@@ -5,46 +5,35 @@
 @import 'libs/breakpoints';
 
 /*
-	Dimension by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	Indivisible by Pixelarity
+	pixelarity.com | hello@pixelarity.com
+	License: pixelarity.com/license
 */
 
-/* BG */
+/* Panel */
 
-	#bg {
-		body.is-preload & {
-			&:before {
-				background-color: transparent;
-			}
-		}
-	}
+	.panel {
+		margin: 0 0 (_size(element-margin) * 1.5) 0;
 
-/* Header */
-
-	#header {
-		body.is-preload & {
-			> * {
-				opacity: 1;
-			}
-
-			@include vendor('filter', 'none');
-
-			.content {
-				.inner {
-					max-height: none;
-					padding: 3rem 2rem;
-					opacity: 1;
-				}
-			}
-		}
-	}
-
-/* Main */
-
-	#main {
-		article {
+		body.is-preload-0 & {
 			opacity: 1;
-			margin: (_size(element-margin) * 2) 0 0 0;
+
+			> .image {
+				@include vendor('transform', 'none !important');
+			}
+
+			> .content {
+				@include vendor('transform', 'none !important');
+			}
+		}
+	}
+
+/* Footer */
+
+	#footer {
+		margin-top: 0;
+
+		body.is-preload-0 & {
+			opacity: 1;
 		}
 	}

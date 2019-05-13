@@ -1,37 +1,39 @@
 /*
-	Dimension by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	Indivisible by Pixelarity
+	pixelarity.com | hello@pixelarity.com
+	License: pixelarity.com/license
 */
 
-/* BG */
+/* Panel */
 
-	body.is-preload #bg:before {
-		background-color: transparent;
+	.panel {
+		margin: 0 0 3em 0;
 	}
 
-/* Header */
-
-	body.is-preload #header {
-		-moz-filter: none;
-		-webkit-filter: none;
-		-ms-filter: none;
-		filter: none;
-	}
-
-		body.is-preload #header > * {
+		body.is-preload-0 .panel {
 			opacity: 1;
 		}
 
-		body.is-preload #header .content .inner {
-			max-height: none;
-			padding: 3rem 2rem;
+			body.is-preload-0 .panel > .image {
+				-moz-transform: none !important;
+				-webkit-transform: none !important;
+				-ms-transform: none !important;
+				transform: none !important;
+			}
+
+			body.is-preload-0 .panel > .content {
+				-moz-transform: none !important;
+				-webkit-transform: none !important;
+				-ms-transform: none !important;
+				transform: none !important;
+			}
+
+/* Footer */
+
+	#footer {
+		margin-top: 0;
+	}
+
+		body.is-preload-0 #footer {
 			opacity: 1;
 		}
-
-/* Main */
-
-	#main article {
-		opacity: 1;
-		margin: 4rem 0 0 0;
-	}

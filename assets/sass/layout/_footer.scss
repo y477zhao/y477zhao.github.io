@@ -1,37 +1,38 @@
 ///
-/// Dimension by HTML5 UP
-/// html5up.net | @ajlkn
-/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+/// Indivisible by Pixelarity
+/// pixelarity.com | hello@pixelarity.com
+/// License: pixelarity.com/license
 ///
 
 /* Footer */
 
 	#footer {
-		@include vendor('transition', (
-			'transform #{_duration(article)} ease-in-out',
-			'filter #{_duration(article)} ease-in-out',
-			'opacity #{_duration(article)} ease-in-out',
-		));
-		width: 100%;
-		max-width: 100%;
-		margin-top: 2rem;
+		@include vendor('transition', 'opacity 0.5s ease');
+		margin: (_size(element-margin) * 1.5) 0 0 0;
+		opacity: 1.0;
 		text-align: center;
 
 		.copyright {
-			letter-spacing: _font(letter-spacing);
-			font-size: 0.6rem;
-			opacity: 0.75;
+			color: _palette(fg-light);
+			font-size: 0.8em;
+			letter-spacing: _font(letter-spacing-alt);
 			margin-bottom: 0;
 			text-transform: uppercase;
 		}
 
-		body.is-article-visible & {
-			@include vendor('transform', 'scale(0.95)');
-			@include vendor('filter', 'blur(0.1rem)');
+		&.inactive {
 			opacity: 0;
 		}
 
-		body.is-preload & {
+		@include breakpoint('<=xlarge') {
+			margin: _size(element-margin) 0 0 0;
+		}
+
+		@include breakpoint('<=large') {
+			margin: (_size(element-margin) * 0.75) 0 0 0;
+		}
+
+		body.is-preload-0 & {
 			opacity: 0;
 		}
 	}
