@@ -1,5 +1,5 @@
 ///
-/// Indivisible by Pixelarity
+/// Identity by Pixelarity
 /// pixelarity.com | hello@pixelarity.com
 /// License: pixelarity.com/license
 ///
@@ -7,32 +7,29 @@
 /* Footer */
 
 	#footer {
-		@include vendor('transition', 'opacity 0.5s ease');
-		margin: (_size(element-margin) * 1.5) 0 0 0;
-		opacity: 1.0;
+		@include vendor('align-self', 'flex-end');
+		width: 100%;
+		padding: _size(element-margin) 0 0 0;
+		color: rgba(255,255,255,0.75);
+		cursor: default;
 		text-align: center;
 
 		.copyright {
-			color: _palette(fg-light);
-			font-size: 0.8em;
-			letter-spacing: _font(letter-spacing-alt);
-			margin-bottom: 0;
-			text-transform: uppercase;
-		}
+			margin: 0;
+			padding: 0;
+			font-size: 0.9em;
+			list-style: none;
 
-		&.inactive {
-			opacity: 0;
-		}
+			li {
+				display: inline-block;
+				margin: 0 0 0 (0.85em - (_size(letter-spacing) * 2));
+				padding: 0 0 0 0.85em;
+				border-left: solid _size(border-width) rgba(255,255,255,0.5);
+				line-height: 1;
 
-		@include breakpoint('<=xlarge') {
-			margin: _size(element-margin) 0 0 0;
-		}
-
-		@include breakpoint('<=large') {
-			margin: (_size(element-margin) * 0.75) 0 0 0;
-		}
-
-		body.is-preload-0 & {
-			opacity: 0;
+				&:first-child {
+					border-left: 0;
+				}
+			}
 		}
 	}

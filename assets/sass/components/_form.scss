@@ -1,5 +1,5 @@
 ///
-/// Indivisible by Pixelarity
+/// Identity by Pixelarity
 /// pixelarity.com | hello@pixelarity.com
 /// License: pixelarity.com/license
 ///
@@ -13,7 +13,7 @@
 			margin-bottom: 0;
 		}
 
-		> .fields  {
+		> .fields {
 			$gutter: (_size(element-margin) * 0.75);
 
 			@include vendor('display', 'flex');
@@ -71,25 +71,18 @@
 	label {
 		color: _palette(fg-bold);
 		display: block;
-		font-size: 0.8em;
-		font-weight: _font(weight-bold);
+		font-size: 0.9em;
 		margin: 0 0 (_size(element-margin) * 0.5) 0;
-		text-transform: uppercase;
-		letter-spacing: 0.25em;
 	}
 
 	input[type="text"],
 	input[type="password"],
 	input[type="email"],
 	input[type="tel"],
-	input[type="search"],
-	input[type="url"],
 	select,
 	textarea {
 		@include vendor('appearance', 'none');
-		background: _palette(border-bg);
 		border-radius: _size(border-radius);
-		border: none;
 		border: solid 1px _palette(border);
 		color: inherit;
 		display: block;
@@ -103,8 +96,7 @@
 		}
 
 		&:focus {
-			border-color: _palette(accent);
-			box-shadow: 0 0 0 1px _palette(accent);
+			border-color: _palette(highlight);
 		}
 	}
 
@@ -117,6 +109,11 @@
 		padding-right: _size(element-height);
 		text-overflow: ellipsis;
 
+		option {
+			color: _palette(fg-bold);
+			background: _palette(bg);
+		}
+
 		&:focus {
 			&::-ms-value {
 				background-color: transparent;
@@ -126,19 +123,11 @@
 		&::-ms-expand {
 			display: none;
 		}
-
-		option {
-			color: _palette(fg-bold);
-			background: _palette(bg);
-		}
 	}
 
 	input[type="text"],
 	input[type="password"],
 	input[type="email"],
-	input[type="tel"],
-	input[type="search"],
-	input[type="url"],
 	select {
 		height: _size(element-height);
 	}
@@ -158,14 +147,13 @@
 		z-index: -1;
 
 		& + label {
-			@include icon;
+			@include icon(false, solid);
 			color: _palette(fg);
 			cursor: pointer;
 			display: inline-block;
-			font-size: 0.8em;
+			font-size: 1em;
 			font-weight: _font(weight);
-			margin: 0 0 (_size(element-margin) * 0.25) 0;
-			padding-left: (_size(element-height) * 0.6) + 1.25em;
+			padding-left: (_size(element-height) * 0.6) + 0.75em;
 			padding-right: 0.75em;
 			position: relative;
 
@@ -175,31 +163,27 @@
 				border: solid 1px _palette(border);
 				content: '';
 				display: inline-block;
-				height: (_size(element-height) * 0.6);
+				font-size: 0.8em;
+				height: (_size(element-height) * 0.75);
 				left: 0;
-				line-height: (_size(element-height) * 0.575);
+				line-height: (_size(element-height) * 0.75);
 				position: absolute;
 				text-align: center;
-				top: 0;
-				width: (_size(element-height) * 0.6);
-				font-size: 1em;
-				letter-spacing: 0;
+				top: 0.15em;
+				width: (_size(element-height) * 0.75);
 			}
 		}
 
 		&:checked + label {
 			&:before {
-				background: _palette(fg-bold);
-				border-color: _palette(fg-bold);
-				color: _palette(bg-alt);
+				color: _palette(highlight);
 				content: '\f00c';
 			}
 		}
 
 		&:focus + label {
 			&:before {
-				border-color: _palette(accent);
-				box-shadow: 0 0 0 1px _palette(accent);
+				border-color: _palette(highlight);
 			}
 		}
 	}
@@ -207,7 +191,7 @@
 	input[type="checkbox"] {
 		& + label {
 			&:before {
-				border-radius: _size(border-radius) * 0.5;
+				border-radius: _size(border-radius);
 			}
 		}
 	}
@@ -236,11 +220,6 @@
 	}
 
 	:-ms-input-placeholder {
-		color: _palette(fg-light) !important;
-		opacity: 1.0;
-	}
-
-	.formerize-placeholder {
 		color: _palette(fg-light) !important;
 		opacity: 1.0;
 	}
